@@ -6,7 +6,4 @@ import { Component, Vue } from 'vue-property-decorator';
     member: String,
   },
 })
-
-export default class Member extends Vue {
-
-}
+export default class Member extends Vue {}

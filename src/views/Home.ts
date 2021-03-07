@@ -1,22 +1,17 @@
+import { List } from '@/api/interfaces';
 import { Component, Vue } from 'vue-property-decorator';
 import API from '../api';
 import Column from '../components/column';
 import Team from '../components/team';
 
-interface List {
-  id: string;
-  cards: [];
-  name: string;
-}
 @Component({
   components: {
     Column,
     Team,
   },
 })
-
 export default class Home extends Vue {
-  lists: any = [];
+  lists: List[] = [];
 
   totalTasks = 0;
 
@@ -24,7 +19,7 @@ export default class Home extends Vue {
 
   done = 0;
 
-  boardName = '';
+  board = {};
 
   created() {
     this.$nextTick(async () => {
@@ -38,7 +33,7 @@ export default class Home extends Vue {
         }
       });
       this.progress = ((this.totalTasks - this.done) * 100) / this.totalTasks;
-      this.boardName = await API.getBoard();
+      this.board = await API.getBoard();
     });
   }
 }

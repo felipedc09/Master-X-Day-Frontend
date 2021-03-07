@@ -14,13 +14,17 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    radix: 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    'no-unused-expressions': 'off',
+    'import/no-unresolved': 'off',
+    'no-useless-catch': 'off',
+    'no-unused-vars': 'off',
+    'linebreak-style': 'off',
   },
   overrides: [
     {
-      files: [
-        '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)',
-      ],
+      files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
       env: {
         jest: true,
       },

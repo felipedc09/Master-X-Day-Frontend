@@ -13,6 +13,4 @@ import Card from '../card';
     progress: Number,
   },
 })
-
-export default class Column extends Vue {
-}
+export default class Column extends Vue {}

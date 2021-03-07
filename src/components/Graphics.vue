@@ -4,14 +4,14 @@
       v-if="loaded"
       :chartdata="chartdata"
       :options="options"/> -->
-      <div class="container-graphics">
-        <pie-chart v-if="loaded" :data="chartData" :options="chartOptions"></pie-chart>
-      </div>
+    <div class="container-graphics">
+      <pie-chart v-if="loaded" :data="chartData" :options="chartOptions"></pie-chart>
+    </div>
   </div>
 </template>
 
 <script>
-import PieChart from '../PieChart.ts';
+import PieChart from './PieChart';
 
 export default {
   name: 'LineChartContainer',
@@ -41,8 +41,8 @@ export default {
 };
 </script>
 <style>
-  .container-graphics {
-    max-width: 400px;
-    margin: 0 auto;
-  }
+.container-graphics {
+  max-width: 400px;
+  margin: 0 auto;
+}
 </style>

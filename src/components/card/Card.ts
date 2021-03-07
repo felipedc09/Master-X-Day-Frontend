@@ -8,5 +8,4 @@ import { Component, Vue } from 'vue-property-decorator';
     labels: Array,
   },
 })
-
 export default class Card extends Vue {}

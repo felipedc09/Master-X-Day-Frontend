@@ -1,20 +1,17 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import Member from '../member';
-import API from '../../api';
+import API from '@/api';
+import { Member } from '@/api/interfaces';
 
 @Component({
-  components: {
-    member: Member,
-  },
+  components: {},
 })
-
 export default class Team extends Vue {
-members = '';
+  members: Member[] = [];
 
-created() {
-  this.$nextTick(async () => {
-    this.members = await API.getMembers();
-  });
-}
+  created() {
+    this.$nextTick(async () => {
+      this.members = await API.getMembers();
+    });
+  }
 }
