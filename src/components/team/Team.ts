@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import Member from '../member';
-import { getMembers } from '../../api';
+import API from '../../api';
 
 @Component({
   components: {
@@ -14,7 +14,7 @@ members = '';
 
 created() {
   this.$nextTick(async () => {
-    this.members = await getMembers();
+    this.members = await API.getMembers();
   });
 }
 }

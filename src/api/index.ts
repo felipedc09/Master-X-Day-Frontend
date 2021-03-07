@@ -34,15 +34,13 @@ export default class API {
       return error;
     }
   }
-}
 
-export const getMembers = async () => {
-  try {
-    const result = await axios.get(`${BASE_URL}/boards/6043bc7c1097aa4c08408b1d/members?${AUTH}`);
-    console.log(result.data);
-    return result.data;
-  } catch (error) {
-    return error;
+  static async getMembers(): Promise<any> {
+    try {
+      const result = await axios.get(`${BASE_URL}/boards/6043bc7c1097aa4c08408b1d/members?${AUTH}`);
+      return result.data;
+    } catch (error) {
+      return error;
+    }
   }
-};
-
+}

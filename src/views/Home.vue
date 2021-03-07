@@ -10,6 +10,9 @@
         <p>Total Project Progress: {{ progress }}%</p>
       </div>
     </div>
+    <team />
+    <br />
+    <br />
     <div class="row">
       <div
         :key="list.id"
