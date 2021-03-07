@@ -1,6 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import API from '../api';
 import Column from '../components/column';
+import Team from '../components/team';
 
 interface List {
   id: string;
@@ -10,6 +11,7 @@ interface List {
 @Component({
   components: {
     Column,
+    Team,
   },
 })
 
