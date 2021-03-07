@@ -4,7 +4,7 @@ const BASE_URL = 'https://api.trello.com/1';
 const KEY = '66050e2c572e07f079166db1ae85e79d';
 const TOKEN = '79bfd2df83f0384425e8768165bd3f39bc8e5ba79eabcf8c0ba42ec49076045c';
 const AUTH = `key=${KEY}&token=${TOKEN}`;
-const BORAR_ID = '6043bc7c1097aa4c08408b1d'
+const BORAR_ID = '6043bc7c1097aa4c08408b1d';
 interface List {
   id: string;
   cards: [];
