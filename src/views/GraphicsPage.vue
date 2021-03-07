@@ -2,13 +2,13 @@
   <div class='graphics'>
     <div class="container-graph">
     	<div class="todo">
-    		<Graphics :loaded='loaded' :Pmayor="pmayor" :Pmenor="pmenor" :labelg="labelt"/>
+    		<Graphics :loaded='loaded' :Pmayor="datagmax[0]" :Pmenor="datagmin[0]" :labelg="labelt"/>
     	</div>
     	<div class="inprogress">
-    		<Graphics :loaded='loaded' :Pmayor="pmayor" :Pmenor="pmenor" :labelg="labelp"/>
+    		<Graphics :loaded='loaded' :Pmayor="datagmax[1]" :Pmenor="datagmin[1]" :labelg="labelp"/>
     	</div>
     	<div class="completed">
-    		<Graphics :loaded='loaded' :Pmayor="pmayor" :Pmenor="pmenor" :labelg="labelc"/>
+    		<Graphics :loaded='loaded' :Pmayor="datagmax[2]" :Pmenor="datagmin[2]" :labelg="labelc"/>
     	</div>
     </div>
   </div>
@@ -21,12 +21,15 @@ import getListAndCategories from '../api/index';
 export default {
   data() {
     return {
-    	loaded: true,
-    	pmayor: 10,
-    	pmenor: 5,
+    	loaded: false,
+    	pmayor: 3,
+    	pmenor: 2,
     	labelt: 'TO-DO',
     	labelp: 'IN-PROGRESS',
     	labelc: 'DONE',
+      datagmax: [],
+      datagmax: [],
+      total: 0,
     };
   },
   components: {
@@ -45,7 +48,18 @@ export default {
   created() {
     this.$nextTick(async () => {
       const result = await getListAndCategories();
-      console.log(result);
+      const datagraphmin = [];
+      const datagraphmax = [];
+      let acc = 0;
+      result.map((item) => {
+        datagraphmin.push(item.cards.length);
+        acc += item.cards.length;
+      });
+
+      this.datagmin = datagraphmin;
+      this.datagmax = [acc - datagraphmin[0], acc - datagraphmin[1], acc - datagraphmin[2]];
+      this.total = acc;
+      this.loaded = true;
     });
   },
 };
