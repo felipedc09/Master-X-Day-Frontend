@@ -29,7 +29,7 @@
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/eslint-config-airbnb": "^5.0.2",
     "@vue/eslint-config-typescript": "^5.0.2",
-    "@vue/test-utils": "^1.0.3",
+    "@vue/test-utils": "^1.0.3"
   },
   "devDependencies": {
     "@types/jest": "^24.0.19",
