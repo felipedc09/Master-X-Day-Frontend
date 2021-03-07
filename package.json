@@ -8,6 +8,9 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
+  "engines": {
+    "node": "10.16.x"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "chart.js": "^2.9.4",
