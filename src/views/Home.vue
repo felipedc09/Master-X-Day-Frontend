@@ -22,12 +22,12 @@
         <p>Total Project Progress: {{ progress }}%</p>
       </div>
     </div>
-    <team />
+    <Team />
     <br />
     <br />
     <div class="row">
       <div :key="list.id" v-for="list in lists" class="col-lg-4 col-md-4 col-sm-12 col-12">
-        <column
+        <Column
           :key="list.id"
           :columnName="list.name"
           :cards="list.cards"
@@ -40,10 +40,9 @@
   </div>
       </div>
       <div id="graphics" class="tab-pane fade">
-         <!-- Graphics content -->
+         <Graphics />
       </div>
     </div>
-    <!--  -->
   </div>
 </template>
 

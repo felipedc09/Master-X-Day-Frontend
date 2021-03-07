@@ -1,13 +1,15 @@
 import { List } from '@/api/interfaces';
 import { Component, Vue } from 'vue-property-decorator';
-import API from '../api';
-import Column from '../components/column';
-import Team from '../components/team';
+import Graphics from '@/components/graphics';
+import API from '@/api';
+import Column from '@/components/column';
+import Team from '@/components/team';
 
 @Component({
   components: {
     Column,
     Team,
+    Graphics,
   },
 })
 export default class Home extends Vue {
