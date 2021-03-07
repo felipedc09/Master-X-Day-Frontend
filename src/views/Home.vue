@@ -10,16 +10,23 @@
         <p>Total Project Progress: {{ progress }}%</p>
       </div>
     </div>
+    <team />
+    <br />
+    <br />
     <div class="row">
-      <div v-for="list in lists" class="col-lg-4 col-md-4 col-sm-12 col-12">
+      <div
+        :key="list.id"
+        v-for="list in lists"
+        class="col-lg-4 col-md-4 col-sm-12 col-12"
+      >
         <column
           :key="list.id"
           :columnName="list.name"
           :cards="list.cards"
           :counter="list.cards.length"
           :totalTasks="totalTasks"
-          :progress="((list.cards.length) * 100) / totalTasks"
-          />
+          :progress="(list.cards.length * 100) / totalTasks"
+        />
       </div>
     </div>
   </div>
